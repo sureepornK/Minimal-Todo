@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on darwin)" generated="2025-09-25T19:31:05.827222" rpa="false" schemaversion="5">
+<suite id="s1" name="TC MinimalTodo" source="/Users/sureepornkatung/Documents/TTB_Test/automate/4_MobileApp/TC_MinimalTodo.robot">
+<test id="s1-t1" name="TC001 Open Application" line="13">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Pixel 3a</arg>
+<arg>app=${APP_PATH}</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-09-25T19:31:06.118753" elapsed="6.130426"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:06.118310" elapsed="6.131309"/>
+</test>
+<test id="s1-t2" name="TC002 Add New Todo" line="16">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:12.251718" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB'.</msg>
+<msg time="2025-09-25T19:31:12.899812" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/addToDoItemFAB</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:12.250552" elapsed="0.649462"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:13.610151" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</arg>
+<arg>15s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-25T19:31:12.900489" elapsed="0.709811"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:13.612008" level="INFO">Typing text 'create test script' into text field 'com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-09-25T19:31:13.658316" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</arg>
+<arg>create test script</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:13.610614" elapsed="0.047842"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:13.660477" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton'.</msg>
+<msg time="2025-09-25T19:31:14.271156" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:13.659016" elapsed="0.612287"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</arg>
+<arg>15s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-25T19:31:14.271622" elapsed="1.183215"/>
+</kw>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:15.497671" level="INFO">Element 'com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview' text is 'Create test script' </msg>
+<msg time="2025-09-25T19:31:15.497840" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</msg>
+<msg time="2025-09-25T19:31:15.498025" level="INFO">${titleTextAdd} = Create test script</msg>
+<var>${titleTextAdd}</var>
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</arg>
+<doc>Returns the text of the element with the ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:15.455301" elapsed="0.042764"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${titleTextAdd}</arg>
+<arg>Create test script</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-09-25T19:31:15.498398" elapsed="0.000398"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:12.250013" elapsed="3.249040"/>
+</test>
+<test id="s1-t3" name="TC003 Edit Todo list and Set Remind" line="25">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:15.501249" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview'.</msg>
+<msg time="2025-09-25T19:31:15.545801" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:15.499736" elapsed="0.046234"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:16.229156" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText
+criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</arg>
+<arg>15s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-25T19:31:15.546342" elapsed="0.682945"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:16.230811" level="INFO">Clear text field 'com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-09-25T19:31:16.266809" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:16.229565" elapsed="0.037364"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:16.269579" level="INFO">Typing text 'create test script Todo' into text field 'com.avjindersinghsekhon.minimaltodo:id/userToDoEditText'</msg>
+<msg time="2025-09-25T19:31:16.927008" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/userToDoEditText</arg>
+<arg>create test script Todo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:16.267353" elapsed="0.659801"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:16.928744" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat'.</msg>
+<msg time="2025-09-25T19:31:17.568958" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoHasDateSwitchCompat</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:16.927465" elapsed="0.641638"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:17.571171" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText'.</msg>
+<msg time="2025-09-25T19:31:18.219934" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/newTodoDateEditText</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:17.569557" elapsed="0.650547"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:18.222157" level="INFO">Clicking element '//android.view.View[@content-desc="26 September 2025"]'.</msg>
+<msg time="2025-09-25T19:31:19.928854" level="INFO">xpath criteria: //android.view.View[@content-desc="26 September 2025"]</msg>
+<arg>//android.view.View[@content-desc="26 September 2025"]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:18.220443" elapsed="1.708562"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:19.931047" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/ok'.</msg>
+<msg time="2025-09-25T19:31:20.599090" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/ok</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/ok</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:19.929582" elapsed="0.669609"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:20.600505" level="INFO">Clicking element 'com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton'.</msg>
+<msg time="2025-09-25T19:31:21.168817" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</msg>
+<arg>com.avjindersinghsekhon.minimaltodo:id/makeToDoFloatingActionButton</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:20.599400" elapsed="0.569765"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</arg>
+<arg>15s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-25T19:31:21.169556" elapsed="0.065062"/>
+</kw>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:21.731970" level="INFO">Element 'com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview' text is 'Create test script Todo' </msg>
+<msg time="2025-09-25T19:31:21.732102" level="INFO">criteria is com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</msg>
+<msg time="2025-09-25T19:31:21.732235" level="INFO">${titleTextEdit} = Create test script Todo</msg>
+<var>${titleTextEdit}</var>
+<arg>com.avjindersinghsekhon.minimaltodo:id/toDoListItemTextview</arg>
+<doc>Returns the text of the element with the ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:21.234923" elapsed="0.497350"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${titleTextEdit}</arg>
+<arg>Create test script Todo</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-09-25T19:31:21.732548" elapsed="0.000258"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:15.499344" elapsed="6.233652"/>
+</test>
+<test id="s1-t4" name="TC004 Delete Todo" line="39">
+<kw name="Swipe" owner="AppiumLibrary">
+<arg>start_x=850</arg>
+<arg>start_y=300</arg>
+<arg>end_x=50</arg>
+<arg>end_y=300</arg>
+<arg>duration=1200ms</arg>
+<doc>Swipes from one point to another point, for an optional ``duration``.</doc>
+<status status="PASS" start="2025-09-25T19:31:21.733686" elapsed="1.513079"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:21.733302" elapsed="1.515525"/>
+</test>
+<test id="s1-t5" name="TC005 Open Night Mode" line="42">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:23.251135" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="More options"]'.</msg>
+<msg time="2025-09-25T19:31:24.290978" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="More options"]</msg>
+<arg>//android.widget.ImageView[@content-desc="More options"]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:23.249856" elapsed="1.041270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:25.162583" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[1]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[1]</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-25T19:31:24.291449" elapsed="0.871340"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:25.165155" level="INFO">Clicking element '//android.widget.ListView/android.widget.LinearLayout[1]'.</msg>
+<msg time="2025-09-25T19:31:26.009113" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[1]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[1]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:25.163261" elapsed="0.846117"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:26.012052" level="INFO">Clicking element 'android:id/checkbox'.</msg>
+<msg time="2025-09-25T19:31:26.068419" level="INFO">criteria is android:id/checkbox</msg>
+<arg>android:id/checkbox</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:26.009926" elapsed="0.058869"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:26.071105" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<msg time="2025-09-25T19:31:26.848004" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Navigate up"]</msg>
+<arg>//android.widget.ImageButton[@content-desc="Navigate up"]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:26.069273" elapsed="0.778894"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:23.249343" elapsed="3.599146"/>
+</test>
+<test id="s1-t6" name="TC006 Night Mode is off" line="49">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:28.008051" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="More options"]
+xpath criteria: //android.widget.ImageView[@content-desc="More options"]</msg>
+<arg>//android.widget.ImageView[@content-desc="More options"]</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-25T19:31:26.849419" elapsed="1.158908"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:28.010869" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="More options"]'.</msg>
+<msg time="2025-09-25T19:31:28.066933" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="More options"]</msg>
+<arg>//android.widget.ImageView[@content-desc="More options"]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:28.009041" elapsed="0.058112"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:28.952820" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[1]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[1]</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-25T19:31:28.067695" elapsed="0.885458"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:28.956089" level="INFO">Clicking element '//android.widget.ListView/android.widget.LinearLayout[1]'.</msg>
+<msg time="2025-09-25T19:31:29.763561" level="INFO">xpath criteria: //android.widget.ListView/android.widget.LinearLayout[1]</msg>
+<arg>//android.widget.ListView/android.widget.LinearLayout[1]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:28.953565" elapsed="0.810220"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:29.766150" level="INFO">Clicking element 'android:id/checkbox'.</msg>
+<msg time="2025-09-25T19:31:30.449492" level="INFO">criteria is android:id/checkbox</msg>
+<arg>android:id/checkbox</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:29.764345" elapsed="0.685369"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-09-25T19:31:30.451836" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Navigate up"]'.</msg>
+<msg time="2025-09-25T19:31:30.528167" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Navigate up"]</msg>
+<arg>//android.widget.ImageButton[@content-desc="Navigate up"]</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T19:31:30.450166" elapsed="0.078449"/>
+</kw>
+<status status="PASS" start="2025-09-25T19:31:26.848877" elapsed="3.680151"/>
+</test>
+<status status="PASS" start="2025-09-25T19:31:05.827971" elapsed="24.701689"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC MinimalTodo" id="s1" pass="6" fail="0" skip="0">TC MinimalTodo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
